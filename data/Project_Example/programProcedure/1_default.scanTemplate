@@ -1,0 +1,1012 @@
+{
+    "info": {
+        "version": "2.0.2.0"
+    },
+    "workflowinfo": {
+        "maskParam": {
+            "cameraScale": 0.8928571428571428,
+            "editorWindowContentX": 4634,
+            "editorWindowContentY": 2697,
+            "editorWindowInitHeight": 6800,
+            "editorWindowInitWidth": 11530
+        },
+        "project": [
+            {
+                "cate": "机器人命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "originalMove",
+                "displayName": "原点运动",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstRobotCommand",
+                "height": 40,
+                "inputs": [
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                ],
+                "nodeIcon": "qrc:images/robot_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/robot/Sn3DRobotOriginMotion.qml",
+                "objID": "12741b07-originalMove",
+                "objName": "originalMove",
+                "objPathID": "12741b07-originalMove",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5278,
+                "posY": 3082.7199999999993,
+                "properties": "{\"x\":\"-94.393\",\"y\":\"-6.35\",\"z\":\"128.373\",\"rx\":\"-2.822\",\"ry\":\"-30.073\",\"rz\":\"165.607\",\"j1\":\"-94.393\",\"j2\":\"-6.35\",\"j3\":\"128.373\",\"j4\":\"-2.822\",\"j5\":\"-30.073\",\"j6\":\"165.607\",\"originalPointListVisible\":true,\"originalListRecVisible\":true}",
+                "properties_ui": "qrc:ui/nodePages/robot/Sn3DRobotOriginMotion.qml",
+                "secondLevelId": "secondOriginMove",
+                "state": 5376,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "RobotRequest",
+                "width": 258
+            },
+            {
+                "cate": "机器人命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "continuousJointMove",
+                "displayName": "关节运动",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstRobotCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "1d5d3a15-jointmove",
+                        "inputSock": "subscribe",
+                        "outputNode": "5833379c-jointmove",
+                        "outputSock": "publish",
+                        "uuid": "e830e3e0-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/robot_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "objID": "1d5d3a15-jointmove",
+                "objName": "jointmove",
+                "objPathID": "1d5d3a15-jointmove",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5318.5664000000115,
+                "posY": 3527.014400000001,
+                "properties": "{\"autoVidioRecFlg\":true,\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"savePointVisible\":false,\"startRecordFlg\":false,\"stopRecordFlg\":false,\"autoCaptureAlias\":false,\"jointIntervalTime\":\"1\",\"isDefaultSavePoint\":true,\"curPointListIndex\":-1,\"radiusValue\":\"50\",\"isEnterRecord\":false,\"pointsInfo\":[{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"3.098\",\"y\":\"-725.263\",\"z\":\"325.34\",\"xTCP\":\"3.098\",\"yTCP\":\"-725.263\",\"zTCP\":\"325.34\",\"rx\":\"133.676\",\"ry\":\"-68.3\",\"rz\":\"-45.146\",\"rxTCP\":\"133.676\",\"ryTCP\":\"-68.3\",\"rzTCP\":\"-45.146\",\"j1\":\"-88.61\",\"j2\":\"-5.345\",\"j3\":\"128.83\",\"j4\":\"9.715\",\"j5\":\"-29.682\",\"j6\":\"156.752\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_0\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"236.05\",\"y\":\"-745.171\",\"z\":\"412.386\",\"xTCP\":\"236.05\",\"yTCP\":\"-745.171\",\"zTCP\":\"412.386\",\"rx\":\"109.748\",\"ry\":\"-73.537\",\"rz\":\"-5.504\",\"rxTCP\":\"109.748\",\"ryTCP\":\"-73.537\",\"rzTCP\":\"-5.504\",\"j1\":\"-71.267\",\"j2\":\"-5.345\",\"j3\":\"122.394\",\"j4\":\"9.715\",\"j5\":\"-32.595\",\"j6\":\"156.753\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_1\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"241.878\",\"y\":\"-762.534\",\"z\":\"463.265\",\"xTCP\":\"241.878\",\"yTCP\":\"-762.534\",\"zTCP\":\"463.265\",\"rx\":\"96.265\",\"ry\":\"-74.724\",\"rz\":\"7.468\",\"rxTCP\":\"96.265\",\"ryTCP\":\"-74.724\",\"rzTCP\":\"7.468\",\"j1\":\"-71.272\",\"j2\":\"-4.376\",\"j3\":\"119.487\",\"j4\":\"9.715\",\"j5\":\"-32.584\",\"j6\":\"156.753\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_2\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"265.18\",\"y\":\"-773.505\",\"z\":\"-31.7\",\"xTCP\":\"265.18\",\"yTCP\":\"-773.505\",\"zTCP\":\"-31.7\",\"rx\":\"119.695\",\"ry\":\"-66.956\",\"rz\":\"-15.659\",\"rxTCP\":\"119.695\",\"ryTCP\":\"-66.956\",\"rzTCP\":\"-15.659\",\"j1\":\"-69.273\",\"j2\":\"-46.953\",\"j3\":\"115.549\",\"j4\":\"9.715\",\"j5\":\"-61.542\",\"j6\":\"156.755\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_3\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-147.215\",\"y\":\"-835.052\",\"z\":\"-14.385\",\"xTCP\":\"-147.215\",\"yTCP\":\"-835.052\",\"zTCP\":\"-14.385\",\"rx\":\"114.257\",\"ry\":\"-68.348\",\"rz\":\"-39.614\",\"rxTCP\":\"114.257\",\"ryTCP\":\"-68.348\",\"rzTCP\":\"-39.614\",\"j1\":\"-98.259\",\"j2\":\"-46.939\",\"j3\":\"113.053\",\"j4\":\"9.715\",\"j5\":\"-61.523\",\"j6\":\"156.755\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_4\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-147.746\",\"y\":\"-837.596\",\"z\":\"-6.803\",\"xTCP\":\"-147.746\",\"yTCP\":\"-837.596\",\"zTCP\":\"-6.803\",\"rx\":\"113.032\",\"ry\":\"-68.617\",\"rz\":\"-38.485\",\"rxTCP\":\"113.032\",\"ryTCP\":\"-68.617\",\"rzTCP\":\"-38.485\",\"j1\":\"-98.27\",\"j2\":\"-46.437\",\"j3\":\"113.034\",\"j4\":\"9.715\",\"j5\":\"-61.525\",\"j6\":\"156.757\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_5\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-158.885\",\"y\":\"-867.131\",\"z\":\"129.832\",\"xTCP\":\"-158.885\",\"yTCP\":\"-867.131\",\"zTCP\":\"129.832\",\"rx\":\"87.766\",\"ry\":\"-71.517\",\"rz\":\"-15.122\",\"rxTCP\":\"87.766\",\"ryTCP\":\"-71.517\",\"rzTCP\":\"-15.122\",\"j1\":\"-98.71\",\"j2\":\"-37.396\",\"j3\":\"113.063\",\"j4\":\"9.715\",\"j5\":\"-61.523\",\"j6\":\"156.757\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_6\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-8.674\",\"y\":\"-835.143\",\"z\":\"171.425\",\"xTCP\":\"-8.674\",\"yTCP\":\"-835.143\",\"zTCP\":\"171.425\",\"rx\":\"85.789\",\"ry\":\"-71.572\",\"rz\":\"-3.367\",\"rxTCP\":\"85.789\",\"ryTCP\":\"-71.572\",\"rzTCP\":\"-3.367\",\"j1\":\"-88.829\",\"j2\":\"-31.293\",\"j3\":\"118.563\",\"j4\":\"9.714\",\"j5\":\"-61.549\",\"j6\":\"156.757\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_7\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"245.173\",\"y\":\"-752.065\",\"z\":\"378.872\",\"xTCP\":\"245.173\",\"yTCP\":\"-752.065\",\"zTCP\":\"378.872\",\"rx\":\"113.31\",\"ry\":\"-72.881\",\"rz\":\"-8.609\",\"rxTCP\":\"113.31\",\"ryTCP\":\"-72.881\",\"rzTCP\":\"-8.609\",\"j1\":\"-70.753\",\"j2\":\"-8.335\",\"j3\":\"122.167\",\"j4\":\"9.714\",\"j5\":\"-34.166\",\"j6\":\"156.783\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_8\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"1d5d3a15-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"233.253\",\"y\":\"-719.898\",\"z\":\"326.286\",\"xTCP\":\"233.253\",\"yTCP\":\"-719.898\",\"zTCP\":\"326.286\",\"rx\":\"124.891\",\"ry\":\"-70.477\",\"rz\":\"-19.658\",\"rxTCP\":\"124.891\",\"ryTCP\":\"-70.477\",\"rzTCP\":\"-19.658\",\"j1\":\"-70.802\",\"j2\":\"-8.698\",\"j3\":\"126.154\",\"j4\":\"9.714\",\"j5\":\"-34.164\",\"j6\":\"156.784\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_9\",\"publisher\":\"workflowServer;\"}],\"targets\":[]}",
+                "properties_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "secondLevelId": "secondJointMove",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "RobotRequest",
+                "width": 258
+            },
+            {
+                "cate": "机器人命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "continuousJointMove",
+                "displayName": "关节运动",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstRobotCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "265d188-jointmove",
+                        "inputSock": "subscribe",
+                        "outputNode": "85695d64-startScan",
+                        "outputSock": "publish",
+                        "uuid": "69c3a647-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/robot_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "objID": "265d188-jointmove",
+                "objName": "jointmove",
+                "objPathID": "265d188-jointmove",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5311.040000000011,
+                "posY": 3367.8400000000006,
+                "properties": "{\"autoVidioRecFlg\":false,\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"savePointVisible\":false,\"startRecordFlg\":true,\"stopRecordFlg\":false,\"autoCaptureAlias\":false,\"jointIntervalTime\":\"2\",\"isDefaultSavePoint\":true,\"curPointListIndex\":-1,\"radiusValue\":\"50\",\"isEnterRecord\":false,\"pointsInfo\":[{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-51.771\",\"y\":\"-729.747\",\"z\":\"319.832\",\"xTCP\":\"-51.771\",\"yTCP\":\"-729.747\",\"zTCP\":\"319.832\",\"rx\":\"132.736\",\"ry\":\"-68.079\",\"rz\":\"-43.533\",\"rxTCP\":\"132.736\",\"ryTCP\":\"-68.079\",\"rzTCP\":\"-43.533\",\"j1\":\"-94.393\",\"j2\":\"-6.35\",\"j3\":\"128.373\",\"j4\":\"-2.822\",\"j5\":\"-30.073\",\"j6\":\"165.607\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_0\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"244.002\",\"y\":\"-700.003\",\"z\":\"356.285\",\"xTCP\":\"244.002\",\"yTCP\":\"-700.003\",\"zTCP\":\"356.285\",\"rx\":\"125.376\",\"ry\":\"-69.846\",\"rz\":\"-13.346\",\"rxTCP\":\"125.376\",\"ryTCP\":\"-69.846\",\"rzTCP\":\"-13.346\",\"j1\":\"-71.117\",\"j2\":\"-4.77\",\"j3\":\"127.085\",\"j4\":\"-2.823\",\"j5\":\"-30.376\",\"j6\":\"165.485\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_1\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"73.479\",\"y\":\"-746.01\",\"z\":\"367.911\",\"xTCP\":\"73.479\",\"yTCP\":\"-746.01\",\"zTCP\":\"367.911\",\"rx\":\"122.965\",\"ry\":\"-70.341\",\"rz\":\"-24.667\",\"rxTCP\":\"122.965\",\"ryTCP\":\"-70.341\",\"rzTCP\":\"-24.667\",\"j1\":\"-84.705\",\"j2\":\"-4.772\",\"j3\":\"126.126\",\"j4\":\"-2.823\",\"j5\":\"-30.377\",\"j6\":\"165.485\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_2\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-266.54\",\"y\":\"-848.642\",\"z\":\"67.609\",\"xTCP\":\"-266.54\",\"yTCP\":\"-848.642\",\"zTCP\":\"67.609\",\"rx\":\"137.315\",\"ry\":\"-67.117\",\"rz\":\"-60.747\",\"rxTCP\":\"137.315\",\"ryTCP\":\"-67.117\",\"rzTCP\":\"-60.747\",\"j1\":\"-107.818\",\"j2\":\"-39.035\",\"j3\":\"111.403\",\"j4\":\"-2.823\",\"j5\":\"-43.853\",\"j6\":\"165.485\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_3\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"256.301\",\"y\":\"-732.829\",\"z\":\"446.378\",\"xTCP\":\"256.301\",\"yTCP\":\"-732.829\",\"zTCP\":\"446.378\",\"rx\":\"98.375\",\"ry\":\"-73.022\",\"rz\":\"12.456\",\"rxTCP\":\"98.375\",\"ryTCP\":\"-73.022\",\"rzTCP\":\"12.456\",\"j1\":\"-71.066\",\"j2\":\"-3.091\",\"j3\":\"122.302\",\"j4\":\"-2.823\",\"j5\":\"-32.986\",\"j6\":\"165.496\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_4\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"87.714\",\"y\":\"-724.206\",\"z\":\"121.518\",\"xTCP\":\"87.714\",\"yTCP\":\"-724.206\",\"zTCP\":\"121.518\",\"rx\":\"132.936\",\"ry\":\"-68.95\",\"rz\":\"-32.326\",\"rxTCP\":\"132.936\",\"ryTCP\":\"-68.95\",\"rzTCP\":\"-32.326\",\"j1\":\"-83.614\",\"j2\":\"-26.228\",\"j3\":\"128.745\",\"j4\":\"-2.823\",\"j5\":\"-50.835\",\"j6\":\"165.495\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_5\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"36.91\",\"y\":\"-730.497\",\"z\":\"-9.966\",\"xTCP\":\"36.91\",\"yTCP\":\"-730.497\",\"zTCP\":\"-9.966\",\"rx\":\"133.138\",\"ry\":\"-69.577\",\"rz\":\"-36.412\",\"rxTCP\":\"133.138\",\"ryTCP\":\"-69.577\",\"rzTCP\":\"-36.412\",\"j1\":\"-87.7\",\"j2\":\"-41.248\",\"j3\":\"124.917\",\"j4\":\"-2.823\",\"j5\":\"-62.376\",\"j6\":\"165.494\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_6\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-52.533\",\"y\":\"-766.385\",\"z\":\"22.007\",\"xTCP\":\"-52.533\",\"yTCP\":\"-766.385\",\"zTCP\":\"22.007\",\"rx\":\"128.3\",\"ry\":\"-70.66\",\"rz\":\"-38.667\",\"rxTCP\":\"128.3\",\"ryTCP\":\"-70.66\",\"rzTCP\":\"-38.667\",\"j1\":\"-94.474\",\"j2\":\"-39.475\",\"j3\":\"122.468\",\"j4\":\"-2.822\",\"j5\":\"-60.118\",\"j6\":\"165.494\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_7\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-225.684\",\"y\":\"-857.732\",\"z\":\"503.594\",\"xTCP\":\"-225.684\",\"yTCP\":\"-857.732\",\"zTCP\":\"503.594\",\"rx\":\"101.117\",\"ry\":\"-72.714\",\"rz\":\"-24.385\",\"rxTCP\":\"101.117\",\"ryTCP\":\"-72.714\",\"rzTCP\":\"-24.385\",\"j1\":\"-104.98\",\"j2\":\"-9.66\",\"j3\":\"109.214\",\"j4\":\"-2.822\",\"j5\":\"-25.616\",\"j6\":\"165.494\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_8\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-374.053\",\"y\":\"-854.449\",\"z\":\"759.125\",\"xTCP\":\"-374.053\",\"yTCP\":\"-854.449\",\"zTCP\":\"759.125\",\"rx\":\"30.011\",\"ry\":\"-57.627\",\"rz\":\"33.768\",\"rxTCP\":\"30.011\",\"ryTCP\":\"-57.627\",\"rzTCP\":\"33.768\",\"j1\":\"-113.993\",\"j2\":\"-9.662\",\"j3\":\"94.637\",\"j4\":\"-2.823\",\"j5\":\"-41.972\",\"j6\":\"165.494\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_9\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-373.723\",\"y\":\"-853.736\",\"z\":\"751.66\",\"xTCP\":\"-373.723\",\"yTCP\":\"-853.736\",\"zTCP\":\"751.66\",\"rx\":\"30.529\",\"ry\":\"-58.06\",\"rz\":\"33.331\",\"rxTCP\":\"30.529\",\"ryTCP\":\"-58.06\",\"rzTCP\":\"33.331\",\"j1\":\"-113.993\",\"j2\":\"-9.669\",\"j3\":\"95.143\",\"j4\":\"-2.823\",\"j5\":\"-41.973\",\"j6\":\"165.494\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_10\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"265d188-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-74.795\",\"y\":\"-805.019\",\"z\":\"317.463\",\"xTCP\":\"-74.795\",\"yTCP\":\"-805.019\",\"zTCP\":\"317.463\",\"rx\":\"128.602\",\"ry\":\"-69.144\",\"rz\":\"-40.841\",\"rxTCP\":\"128.602\",\"ryTCP\":\"-69.144\",\"rzTCP\":\"-40.841\",\"j1\":\"-95.624\",\"j2\":\"-13.249\",\"j3\":\"120.958\",\"j4\":\"-2.823\",\"j5\":\"-31.399\",\"j6\":\"165.494\",\"jointSpeedValue\":\"7\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_11\",\"publisher\":\"workflowServer;\"}],\"targets\":[]}",
+                "properties_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "secondLevelId": "secondJointMove",
+                "state": 5376,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "RobotRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "scanSettings",
+                "displayName": "扫描设置",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "2a2b6336-scanSettings",
+                        "inputSock": "subscribe",
+                        "outputNode": "6b64e9a2-newProject",
+                        "outputSock": "publish",
+                        "uuid": "a920f38a-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/scan/Sn3DScanSetting.qml",
+                "objID": "2a2b6336-scanSettings",
+                "objName": "scanSettings",
+                "objPathID": "2a2b6336-scanSettings",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5294.630400000002,
+                "posY": 3208.468799999999,
+                "properties": "{\"dotDis\":12,\"lightMode\":0,\"scanObject\":0,\"lightness\":3,\"holeCompensation\":\"0\",\"highSpeedSwitch\":false,\"qualitySwitch\":true,\"localViewSwitch\":false,\"lockViewSwitch\":false,\"viewAreaSwitch\":false,\"dotDisTxtEdit\":12,\"scanTypeIndex\":0,\"isUseNovaMarkerSize6\":false,\"isUseNovaMarkerSize12\":true}",
+                "properties_ui": "qrc:ui/nodePages/scan/Sn3DScanSetting.qml",
+                "secondLevelId": "secondScanSettingTrak",
+                "state": 5376,
+                "subNodes": [
+                ],
+                "timeout": 60000,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "检测命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "inspect",
+                "displayName": "SHINING3D Inspect",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstInspectCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "3cc5a8de-ShiningInspect",
+                        "inputSock": "subscribe",
+                        "outputNode": "a77e17be-save",
+                        "outputSock": "publish",
+                        "uuid": "c1d613e6-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/inspect_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/inspect/ShiningInspect.qml",
+                "objID": "3cc5a8de-ShiningInspect",
+                "objName": "ShiningInspect",
+                "objPathID": "3cc5a8de-ShiningInspect",
+                "options": 0,
+                "outputs": [
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 6044.640000000001,
+                "posY": 3617.6000000000004,
+                "properties": "{\"exe\":\"D:/dht/SHINING3D Inspect/bin/SHINING3D Inspect.exe\",\"templateFilePath\":\"D:/dht/1023/211.SNITemplate\",\"exportFilePath\":\"D:/huangchi\",\"isUseShareMemory\":true,\"isCoverLastReport\":true,\"isSaveCSV\":false,\"isSavePDF\":true,\"isSaveProject\":true,\"openInspectReportCheck\":true}",
+                "properties_ui": "qrc:ui/nodePages/inspect/ShiningInspect.qml",
+                "secondLevelId": "secondShiningInspect",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "ShiningInspectRequest",
+                "width": 258
+            },
+            {
+                "cate": "机器人命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "continuousJointMove",
+                "displayName": "关节运动",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstRobotCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "5833379c-jointmove",
+                        "inputSock": "subscribe",
+                        "outputNode": "6267a65a-startScan",
+                        "outputSock": "publish",
+                        "uuid": "dc76f8cc-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/robot_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "objID": "5833379c-jointmove",
+                "objName": "jointmove",
+                "objPathID": "5833379c-jointmove",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 6053.599999999998,
+                "posY": 3433.920000000002,
+                "properties": "{\"autoVidioRecFlg\":true,\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"savePointVisible\":false,\"startRecordFlg\":false,\"stopRecordFlg\":false,\"autoCaptureAlias\":false,\"jointIntervalTime\":\"1\",\"isDefaultSavePoint\":true,\"curPointListIndex\":-1,\"radiusValue\":\"50\",\"isEnterRecord\":false,\"pointsInfo\":[{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"3.098\",\"y\":\"-725.263\",\"z\":\"325.34\",\"xTCP\":\"3.098\",\"yTCP\":\"-725.263\",\"zTCP\":\"325.34\",\"rx\":\"133.676\",\"ry\":\"-68.3\",\"rz\":\"-45.146\",\"rxTCP\":\"133.676\",\"ryTCP\":\"-68.3\",\"rzTCP\":\"-45.146\",\"j1\":\"-88.61\",\"j2\":\"-5.345\",\"j3\":\"128.83\",\"j4\":\"9.715\",\"j5\":\"-29.682\",\"j6\":\"156.752\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_0\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"236.05\",\"y\":\"-745.171\",\"z\":\"412.386\",\"xTCP\":\"236.05\",\"yTCP\":\"-745.171\",\"zTCP\":\"412.386\",\"rx\":\"109.748\",\"ry\":\"-73.537\",\"rz\":\"-5.504\",\"rxTCP\":\"109.748\",\"ryTCP\":\"-73.537\",\"rzTCP\":\"-5.504\",\"j1\":\"-71.267\",\"j2\":\"-5.345\",\"j3\":\"122.394\",\"j4\":\"9.715\",\"j5\":\"-32.595\",\"j6\":\"156.753\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_1\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"241.878\",\"y\":\"-762.534\",\"z\":\"463.265\",\"xTCP\":\"241.878\",\"yTCP\":\"-762.534\",\"zTCP\":\"463.265\",\"rx\":\"96.265\",\"ry\":\"-74.724\",\"rz\":\"7.468\",\"rxTCP\":\"96.265\",\"ryTCP\":\"-74.724\",\"rzTCP\":\"7.468\",\"j1\":\"-71.272\",\"j2\":\"-4.376\",\"j3\":\"119.487\",\"j4\":\"9.715\",\"j5\":\"-32.584\",\"j6\":\"156.753\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_2\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"265.18\",\"y\":\"-773.505\",\"z\":\"-31.7\",\"xTCP\":\"265.18\",\"yTCP\":\"-773.505\",\"zTCP\":\"-31.7\",\"rx\":\"119.695\",\"ry\":\"-66.956\",\"rz\":\"-15.659\",\"rxTCP\":\"119.695\",\"ryTCP\":\"-66.956\",\"rzTCP\":\"-15.659\",\"j1\":\"-69.273\",\"j2\":\"-46.953\",\"j3\":\"115.549\",\"j4\":\"9.715\",\"j5\":\"-61.542\",\"j6\":\"156.755\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_3\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-147.215\",\"y\":\"-835.052\",\"z\":\"-14.385\",\"xTCP\":\"-147.215\",\"yTCP\":\"-835.052\",\"zTCP\":\"-14.385\",\"rx\":\"114.257\",\"ry\":\"-68.348\",\"rz\":\"-39.614\",\"rxTCP\":\"114.257\",\"ryTCP\":\"-68.348\",\"rzTCP\":\"-39.614\",\"j1\":\"-98.259\",\"j2\":\"-46.939\",\"j3\":\"113.053\",\"j4\":\"9.715\",\"j5\":\"-61.523\",\"j6\":\"156.755\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_4\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-147.746\",\"y\":\"-837.596\",\"z\":\"-6.803\",\"xTCP\":\"-147.746\",\"yTCP\":\"-837.596\",\"zTCP\":\"-6.803\",\"rx\":\"113.032\",\"ry\":\"-68.617\",\"rz\":\"-38.485\",\"rxTCP\":\"113.032\",\"ryTCP\":\"-68.617\",\"rzTCP\":\"-38.485\",\"j1\":\"-98.27\",\"j2\":\"-46.437\",\"j3\":\"113.034\",\"j4\":\"9.715\",\"j5\":\"-61.525\",\"j6\":\"156.757\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_5\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-158.885\",\"y\":\"-867.131\",\"z\":\"129.832\",\"xTCP\":\"-158.885\",\"yTCP\":\"-867.131\",\"zTCP\":\"129.832\",\"rx\":\"87.766\",\"ry\":\"-71.517\",\"rz\":\"-15.122\",\"rxTCP\":\"87.766\",\"ryTCP\":\"-71.517\",\"rzTCP\":\"-15.122\",\"j1\":\"-98.71\",\"j2\":\"-37.396\",\"j3\":\"113.063\",\"j4\":\"9.715\",\"j5\":\"-61.523\",\"j6\":\"156.757\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_6\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"-8.674\",\"y\":\"-835.143\",\"z\":\"171.425\",\"xTCP\":\"-8.674\",\"yTCP\":\"-835.143\",\"zTCP\":\"171.425\",\"rx\":\"85.789\",\"ry\":\"-71.572\",\"rz\":\"-3.367\",\"rxTCP\":\"85.789\",\"ryTCP\":\"-71.572\",\"rzTCP\":\"-3.367\",\"j1\":\"-88.829\",\"j2\":\"-31.293\",\"j3\":\"118.563\",\"j4\":\"9.714\",\"j5\":\"-61.549\",\"j6\":\"156.757\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_7\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"245.173\",\"y\":\"-752.065\",\"z\":\"378.872\",\"xTCP\":\"245.173\",\"yTCP\":\"-752.065\",\"zTCP\":\"378.872\",\"rx\":\"113.31\",\"ry\":\"-72.881\",\"rz\":\"-8.609\",\"rxTCP\":\"113.31\",\"ryTCP\":\"-72.881\",\"rzTCP\":\"-8.609\",\"j1\":\"-70.753\",\"j2\":\"-8.335\",\"j3\":\"122.167\",\"j4\":\"9.714\",\"j5\":\"-34.166\",\"j6\":\"156.783\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_8\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"5833379c-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"233.253\",\"y\":\"-719.898\",\"z\":\"326.286\",\"xTCP\":\"233.253\",\"yTCP\":\"-719.898\",\"zTCP\":\"326.286\",\"rx\":\"124.891\",\"ry\":\"-70.477\",\"rz\":\"-19.658\",\"rxTCP\":\"124.891\",\"ryTCP\":\"-70.477\",\"rzTCP\":\"-19.658\",\"j1\":\"-70.802\",\"j2\":\"-8.698\",\"j3\":\"126.154\",\"j4\":\"9.714\",\"j5\":\"-34.164\",\"j6\":\"156.784\",\"jointSpeedValue\":\"11\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_9\",\"publisher\":\"workflowServer;\"}],\"targets\":[]}",
+                "properties_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "secondLevelId": "secondJointMove",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "RobotRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "startScan",
+                "displayName": "开始扫描",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "6267a65a-startScan",
+                        "inputSock": "subscribe",
+                        "outputNode": "f87880f9-scanSettings",
+                        "outputSock": "publish",
+                        "uuid": "25ba85ae-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "",
+                "objID": "6267a65a-startScan",
+                "objName": "startScan",
+                "objPathID": "6267a65a-startScan",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5676.160000000004,
+                "posY": 3437.28,
+                "properties_ui": "",
+                "secondLevelId": "secondStartScanTrak",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "newProject",
+                "displayName": "新建扫描工程",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "6b64e9a2-newProject",
+                        "inputSock": "subscribe",
+                        "outputNode": "12741b07-originalMove",
+                        "outputSock": "publish",
+                        "uuid": "4ae5472e-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/scan/Sn3DNewScanProject.qml",
+                "objID": "6b64e9a2-newProject",
+                "objName": "newProject",
+                "objPathID": "6b64e9a2-newProject",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5280.240000000003,
+                "posY": 3149.3599999999988,
+                "properties": "{\"newProjectName\":\"ProjectGroup_1\",\"newProjectPath\":\"C:/Users/Administrator\",\"keepBackup\":false}",
+                "properties_ui": "qrc:ui/nodePages/scan/Sn3DNewScanProject.qml",
+                "secondLevelId": "secondNewProjectTrak",
+                "state": 5376,
+                "subNodes": [
+                ],
+                "timeout": 60000,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "机器人命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "continuousJointMove",
+                "displayName": "关节运动",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstRobotCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "8206311d-jointmove",
+                        "inputSock": "subscribe",
+                        "outputNode": "1d5d3a15-jointmove",
+                        "outputSock": "publish",
+                        "uuid": "92548850-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/robot_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "objID": "8206311d-jointmove",
+                "objName": "jointmove",
+                "objPathID": "8206311d-jointmove",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5705.280000000001,
+                "posY": 3522.4000000000005,
+                "properties": "{\"autoVidioRecFlg\":true,\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"savePointVisible\":false,\"startRecordFlg\":false,\"stopRecordFlg\":false,\"autoCaptureAlias\":false,\"jointIntervalTime\":\"2\",\"isDefaultSavePoint\":true,\"curPointListIndex\":-1,\"radiusValue\":\"0\",\"isEnterRecord\":false,\"pointsInfo\":[{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"253.037\",\"y\":\"-812.421\",\"z\":\"279.554\",\"xTCP\":\"253.037\",\"yTCP\":\"-812.421\",\"zTCP\":\"279.554\",\"rx\":\"140.708\",\"ry\":\"-65.188\",\"rz\":\"-34.3\",\"rxTCP\":\"140.708\",\"ryTCP\":\"-65.188\",\"rzTCP\":\"-34.3\",\"j1\":\"-71.833\",\"j2\":\"-18.496\",\"j3\":\"116.292\",\"j4\":\"9.711\",\"j5\":\"-26.108\",\"j6\":\"156.41\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_0\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"253.037\",\"y\":\"-812.422\",\"z\":\"279.554\",\"xTCP\":\"253.037\",\"yTCP\":\"-812.422\",\"zTCP\":\"279.554\",\"rx\":\"140.708\",\"ry\":\"-65.188\",\"rz\":\"-34.3\",\"rxTCP\":\"140.708\",\"ryTCP\":\"-65.188\",\"rzTCP\":\"-34.3\",\"j1\":\"-71.833\",\"j2\":\"-18.496\",\"j3\":\"116.292\",\"j4\":\"9.711\",\"j5\":\"-26.108\",\"j6\":\"156.41\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_1\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"251.87\",\"y\":\"-826.97\",\"z\":\"7.542\",\"xTCP\":\"251.87\",\"yTCP\":\"-826.97\",\"zTCP\":\"7.542\",\"rx\":\"145.007\",\"ry\":\"-59.188\",\"rz\":\"-39.401\",\"rxTCP\":\"145.007\",\"ryTCP\":\"-59.188\",\"rzTCP\":\"-39.401\",\"j1\":\"-71.834\",\"j2\":\"-41.641\",\"j3\":\"112.154\",\"j4\":\"9.711\",\"j5\":\"-39.236\",\"j6\":\"156.411\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_2\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"33.627\",\"y\":\"-886.476\",\"z\":\"23.117\",\"xTCP\":\"33.627\",\"yTCP\":\"-886.476\",\"zTCP\":\"23.117\",\"rx\":\"142.954\",\"ry\":\"-60.751\",\"rz\":\"-52.422\",\"rxTCP\":\"142.954\",\"ryTCP\":\"-60.751\",\"rzTCP\":\"-52.422\",\"j1\":\"-86.632\",\"j2\":\"-41.641\",\"j3\":\"110.283\",\"j4\":\"9.711\",\"j5\":\"-39.236\",\"j6\":\"156.411\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_3\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"41.396\",\"y\":\"-886.144\",\"z\":\"23.117\",\"xTCP\":\"41.396\",\"yTCP\":\"-886.144\",\"zTCP\":\"23.117\",\"rx\":\"142.954\",\"ry\":\"-60.751\",\"rz\":\"-51.92\",\"rxTCP\":\"142.954\",\"ryTCP\":\"-60.751\",\"rzTCP\":\"-51.92\",\"j1\":\"-86.13\",\"j2\":\"-41.641\",\"j3\":\"110.283\",\"j4\":\"9.711\",\"j5\":\"-39.236\",\"j6\":\"156.411\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_4\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"366.18\",\"y\":\"-808.01\",\"z\":\"23.118\",\"xTCP\":\"366.18\",\"yTCP\":\"-808.01\",\"zTCP\":\"23.118\",\"rx\":\"142.954\",\"ry\":\"-60.751\",\"rz\":\"-30.215\",\"rxTCP\":\"142.954\",\"ryTCP\":\"-60.751\",\"rzTCP\":\"-30.215\",\"j1\":\"-64.425\",\"j2\":\"-41.641\",\"j3\":\"110.283\",\"j4\":\"9.711\",\"j5\":\"-39.236\",\"j6\":\"156.411\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_5\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"366.28\",\"y\":\"-807.979\",\"z\":\"23.161\",\"xTCP\":\"366.28\",\"yTCP\":\"-807.979\",\"zTCP\":\"23.161\",\"rx\":\"114.934\",\"ry\":\"-22.328\",\"rz\":\"8.912\",\"rxTCP\":\"114.934\",\"ryTCP\":\"-22.328\",\"rzTCP\":\"8.912\",\"j1\":\"-64.418\",\"j2\":\"-41.638\",\"j3\":\"110.282\",\"j4\":\"9.711\",\"j5\":\"-39.233\",\"j6\":\"109.42\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_6\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"366.477\",\"y\":\"-808.285\",\"z\":\"159.923\",\"xTCP\":\"366.477\",\"yTCP\":\"-808.285\",\"zTCP\":\"159.923\",\"rx\":\"106.799\",\"ry\":\"-24.344\",\"rz\":\"12.144\",\"rxTCP\":\"106.799\",\"ryTCP\":\"-24.344\",\"rzTCP\":\"12.144\",\"j1\":\"-64.416\",\"j2\":\"-31.225\",\"j3\":\"112.941\",\"j4\":\"9.711\",\"j5\":\"-39.214\",\"j6\":\"109.42\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_7\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"367.24\",\"y\":\"-805.57\",\"z\":\"368.332\",\"xTCP\":\"367.24\",\"yTCP\":\"-805.57\",\"zTCP\":\"368.332\",\"rx\":\"92.203\",\"ry\":\"-26.745\",\"rz\":\"18.587\",\"rxTCP\":\"92.203\",\"ryTCP\":\"-26.745\",\"rzTCP\":\"18.587\",\"j1\":\"-64.295\",\"j2\":\"-17.723\",\"j3\":\"113.065\",\"j4\":\"9.711\",\"j5\":\"-39.213\",\"j6\":\"109.42\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_8\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"299.683\",\"y\":\"-809.015\",\"z\":\"492.954\",\"xTCP\":\"299.683\",\"yTCP\":\"-809.015\",\"zTCP\":\"492.954\",\"rx\":\"78.318\",\"ry\":\"-27.137\",\"rz\":\"20.168\",\"rxTCP\":\"78.318\",\"ryTCP\":\"-27.137\",\"rzTCP\":\"20.168\",\"j1\":\"-68.31\",\"j2\":\"-10.606\",\"j3\":\"113.066\",\"j4\":\"9.712\",\"j5\":\"-44.541\",\"j6\":\"109.421\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_9\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"300.403\",\"y\":\"-810.759\",\"z\":\"485.132\",\"xTCP\":\"300.403\",\"yTCP\":\"-810.759\",\"zTCP\":\"485.132\",\"rx\":\"78.915\",\"ry\":\"-27.123\",\"rz\":\"19.899\",\"rxTCP\":\"78.915\",\"ryTCP\":\"-27.123\",\"rzTCP\":\"19.899\",\"j1\":\"-68.309\",\"j2\":\"-11.107\",\"j3\":\"113.085\",\"j4\":\"9.712\",\"j5\":\"-44.529\",\"j6\":\"109.421\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_10\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"299.62\",\"y\":\"-808.937\",\"z\":\"203.975\",\"xTCP\":\"299.62\",\"yTCP\":\"-808.937\",\"zTCP\":\"203.975\",\"rx\":\"100.042\",\"ry\":\"-24.928\",\"rz\":\"10.526\",\"rxTCP\":\"100.042\",\"ryTCP\":\"-24.928\",\"rzTCP\":\"10.526\",\"j1\":\"-68.31\",\"j2\":\"-27.264\",\"j3\":\"116.134\",\"j4\":\"9.712\",\"j5\":\"-44.649\",\"j6\":\"109.422\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_11\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"311.561\",\"y\":\"-804.948\",\"z\":\"-24.31\",\"xTCP\":\"311.561\",\"yTCP\":\"-804.948\",\"zTCP\":\"-24.31\",\"rx\":\"110.323\",\"ry\":\"-22.041\",\"rz\":\"7\",\"rxTCP\":\"110.323\",\"ryTCP\":\"-22.041\",\"rzTCP\":\"7\",\"j1\":\"-67.378\",\"j2\":\"-45.881\",\"j3\":\"111.498\",\"j4\":\"9.711\",\"j5\":\"-48.85\",\"j6\":\"109.422\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_12\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"15.458\",\"y\":\"-886.963\",\"z\":\"-8.651\",\"xTCP\":\"15.458\",\"yTCP\":\"-886.963\",\"zTCP\":\"-8.651\",\"rx\":\"108.243\",\"ry\":\"-22.564\",\"rz\":\"-12.411\",\"rxTCP\":\"108.243\",\"ryTCP\":\"-22.564\",\"rzTCP\":\"-12.411\",\"j1\":\"-87.578\",\"j2\":\"-45.854\",\"j3\":\"109.532\",\"j4\":\"9.711\",\"j5\":\"-48.852\",\"j6\":\"109.422\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_13\",\"publisher\":\"workflowServer;\"},{\"cmd\":\"trainPos\",\"checkEnable\":false,\"nodeId\":\"8206311d-jointmove\",\"robotId\":\"0\",\"topicWorkflow\":\"WorkflowNotify\",\"x\":\"12.432\",\"y\":\"-804.91\",\"z\":\"227.395\",\"xTCP\":\"12.432\",\"yTCP\":\"-804.91\",\"zTCP\":\"227.395\",\"rx\":\"96.63\",\"ry\":\"-24.927\",\"rz\":\"-7.689\",\"rxTCP\":\"96.63\",\"ryTCP\":\"-24.927\",\"rzTCP\":\"-7.689\",\"j1\":\"-87.546\",\"j2\":\"-22.229\",\"j3\":\"122.27\",\"j4\":\"9.711\",\"j5\":\"-48.85\",\"j6\":\"109.422\",\"jointSpeedValue\":\"10\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"modeType\":\"joint\",\"pointName\":\"point_14\",\"publisher\":\"workflowServer;\"}],\"targets\":[]}",
+                "properties_ui": "qrc:ui/nodePages/robot/Sn3DRobotJointMove.qml",
+                "secondLevelId": "secondJointMove",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "RobotRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "startScan",
+                "displayName": "开始扫描",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "85695d64-startScan",
+                        "inputSock": "subscribe",
+                        "outputNode": "9ceef0c4-importFrameData",
+                        "outputSock": "publish",
+                        "uuid": "c7461c65-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "",
+                "objID": "85695d64-startScan",
+                "objName": "startScan",
+                "objPathID": "85695d64-startScan",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 6046.276800000001,
+                "posY": 3252.9024000000027,
+                "properties_ui": "",
+                "secondLevelId": "secondStartScanTrak",
+                "state": 5376,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "mesh",
+                "displayName": "网格处理",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "96b620e5-mesh",
+                        "inputSock": "subscribe",
+                        "outputNode": "b8fcae8c-pauseScan",
+                        "outputSock": "publish",
+                        "uuid": "95bfbaa5-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/scan/Sn3DGenerateGridDataTrack.qml",
+                "objID": "96b620e5-mesh",
+                "objName": "mesh",
+                "objPathID": "96b620e5-mesh",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5309.04320000001,
+                "posY": 3611.654399999999,
+                "properties": "{\"encapParamsSelectLevel\":0,\"qualityLevel\":1,\"filterLevel\":4,\"smoothLevel\":1,\"removeSingleValue\":36,\"boundaryOptCheck\":true,\"maxFaceCheck\":true,\"maxFaceNum\":\"20000000\",\"autoFixHoleCheck\":true,\"smallHolePerimeter\":\"10\",\"deleteRealmEditValue\":\"2\",\"encapModelRadio\":0,\"removeThornsCheck\":true,\"markPatchHoleCheck\":true,\"recmandSwitchCheck\":false,\"edgeMeasureCheck\":true,\"holeMeasureCheck\":true,\"thicknessEditTxt\":\"2\"}",
+                "properties_ui": "qrc:ui/nodePages/scan/Sn3DGenerateGridDataTrack.qml",
+                "secondLevelId": "secondPackageProcessTrak",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "importFrameData",
+                "displayName": "importFramePoint",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "9ceef0c4-importFrameData",
+                        "inputSock": "subscribe",
+                        "outputNode": "2a2b6336-scanSettings",
+                        "outputSock": "publish",
+                        "uuid": "2cd7ca4c-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/scan/Sn3DImportFramePoints.qml",
+                "objID": "9ceef0c4-importFrameData",
+                "objName": "importFrameData",
+                "objPathID": "9ceef0c4-importFrameData",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5650.400000000004,
+                "posY": 3230.0799999999986,
+                "properties": "{\"importProjectPath\":\"E:/ScanPlan_Project1.p3\"}",
+                "properties_ui": "qrc:ui/nodePages/scan/Sn3DImportFramePoints.qml",
+                "secondLevelId": "secondImportFrameTrak",
+                "state": 5377,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "save",
+                "displayName": "保存数据",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "a77e17be-save",
+                        "inputSock": "subscribe",
+                        "outputNode": "96b620e5-mesh",
+                        "outputSock": "publish",
+                        "uuid": "f310a48a-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/scan/Sn3DSaveDataPage.qml",
+                "objID": "a77e17be-save",
+                "objName": "save",
+                "objPathID": "a77e17be-save",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5671.750400000001,
+                "posY": 3614.703999999994,
+                "properties": "{\"stlSel\":true,\"p3Sel\":false,\"ascSel\":false,\"objSel\":false,\"plySel\":false,\"mf3Sel\":false,\"txtSel\":false,\"stpSel\":false,\"csvSel\":false,\"igsSel\":false,\"saveName\":\"Scan_1\",\"saveProjectPath\":\"D:/huangchi/RoboScan/V2.0/PW检测\",\"keepBackup\":false,\"isUseSnCheck\":false}",
+                "properties_ui": "qrc:ui/nodePages/scan/Sn3DSaveDataPage.qml",
+                "secondLevelId": "secondSaveTrak",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "pauseScan",
+                "displayName": "Pause Scan",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "b8fcae8c-pauseScan",
+                        "inputSock": "subscribe",
+                        "outputNode": "8206311d-jointmove",
+                        "outputSock": "publish",
+                        "uuid": "29a5cb5e-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "",
+                "objID": "b8fcae8c-pauseScan",
+                "objName": "pauseScan",
+                "objPathID": "b8fcae8c-pauseScan",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 6030.617599999994,
+                "posY": 3529.3440000000005,
+                "properties_ui": "",
+                "secondLevelId": "secondPauseScanTrak",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "pauseScan",
+                "displayName": "Pause Scan",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "e4b27ac8-pauseScan",
+                        "inputSock": "subscribe",
+                        "outputNode": "265d188-jointmove",
+                        "outputSock": "publish",
+                        "uuid": "aea04f1d-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "",
+                "objID": "e4b27ac8-pauseScan",
+                "objName": "pauseScan",
+                "objPathID": "e4b27ac8-pauseScan",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5676.580800000005,
+                "posY": 3365.8896000000013,
+                "properties_ui": "",
+                "secondLevelId": "secondPauseScanTrak",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "scanSettings",
+                "displayName": "扫描设置",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommandTrak",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "f87880f9-scanSettings",
+                        "inputSock": "subscribe",
+                        "outputNode": "e4b27ac8-pauseScan",
+                        "outputSock": "publish",
+                        "uuid": "d8eb87b0-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:ui/nodePages/scan/Sn3DScanSetting.qml",
+                "objID": "f87880f9-scanSettings",
+                "objName": "scanSettings",
+                "objPathID": "f87880f9-scanSettings",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5318.0288000000055,
+                "posY": 3436.7872000000007,
+                "properties": "{\"dotDis\":13,\"lightMode\":0,\"scanObject\":0,\"lightness\":5,\"holeCompensation\":\"0\",\"highSpeedSwitch\":false,\"qualitySwitch\":true,\"localViewSwitch\":false,\"lockViewSwitch\":false,\"viewAreaSwitch\":false,\"dotDisTxtEdit\":13,\"scanTypeIndex\":1,\"isUseNovaMarkerSize6\":false,\"isUseNovaMarkerSize12\":true}",
+                "properties_ui": "qrc:ui/nodePages/scan/Sn3DScanSetting.qml",
+                "secondLevelId": "secondScanSettingTrak",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": 60000,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            }
+        ]
+    }
+}

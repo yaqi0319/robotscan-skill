@@ -1,0 +1,566 @@
+{
+    "info": {
+        "version": "2.0.2.0"
+    },
+    "workflowinfo": {
+        "maskParam": {
+            "cameraScale": 1,
+            "editorWindowContentX": 4802,
+            "editorWindowContentY": 3067,
+            "editorWindowInitHeight": 6800,
+            "editorWindowInitWidth": 11530
+        },
+        "project": [
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "pauseScan",
+                "displayName": "Pause Scan",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "22a1c1f9-pauseScan",
+                        "inputSock": "subscribe",
+                        "outputNode": "2760b3e0-jointmove",
+                        "outputSock": "publish",
+                        "uuid": "bb8a0e25-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "",
+                "objID": "22a1c1f9-pauseScan",
+                "objName": "pauseScan",
+                "objPathID": "22a1c1f9-pauseScan",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5596,
+                "posY": 3323,
+                "properties_ui": "",
+                "secondLevelId": "secondPauseScanTrak",
+                "state": 256,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "机器人命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "continuousJointMove",
+                "displayName": "关节运动",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstRobotCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "2760b3e0-jointmove",
+                        "inputSock": "subscribe",
+                        "outputNode": "79881ef9-startScan",
+                        "outputSock": "publish",
+                        "uuid": "3c48cee2-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/robot_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:/qmls/Sn3DRobotJointMove.qml",
+                "objID": "2760b3e0-jointmove",
+                "objName": "jointmove",
+                "objPathID": "2760b3e0-jointmove",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5285,
+                "posY": 3322,
+                "properties": "{\"autoVidioRecFlg\":false,\"jointSpeedValue\":\"5\",\"jointAccSpeedValue\":\"100\",\"jointNormalSpeedValue\":\"90\",\"savePointVisible\":false,\"startRecordFlg\":false,\"stopRecordFlg\":false,\"autoCaptureAlias\":false,\"jointIntervalTime\":\"5\",\"isDefaultSavePoint\":true,\"curPointListIndex\":-1,\"radiusValue\":\"50\",\"isEnterRecord\":false,\"pointsInfo\":[],\"targets\":[]}",
+                "properties_ui": "qrc:/qmls/Sn3DRobotJointMove.qml",
+                "secondLevelId": "secondJointMove",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "RobotRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "newProject",
+                "displayName": "新建扫描工程",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommand",
+                "height": 40,
+                "inputs": [
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:/qmls/Sn3DNewScanProject.qml",
+                "objID": "2da019c2-newProject",
+                "objName": "newProject",
+                "objPathID": "2da019c2-newProject",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 4967,
+                "posY": 3215,
+                "properties": "{\"newProjectName\":\"ProjectGroup_1\",\"newProjectPath\":\"C:/Users/Administrator\",\"keepBackup\":false}",
+                "properties_ui": "qrc:/qmls/Sn3DNewScanProject.qml",
+                "secondLevelId": "secondNewProjectTrak",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": 60000,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "save",
+                "displayName": "保存数据",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "43ba7e84-save",
+                        "inputSock": "subscribe",
+                        "outputNode": "682c2ede-mesh",
+                        "outputSock": "publish",
+                        "uuid": "8439fac3-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:/qmls/Sn3DSaveDataPage.qml",
+                "objID": "43ba7e84-save",
+                "objName": "save",
+                "objPathID": "43ba7e84-save",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5288,
+                "posY": 3419,
+                "properties": "{\"stlSel\":true,\"p3Sel\":false,\"ascSel\":false,\"objSel\":false,\"plySel\":false,\"mf3Sel\":false,\"txtSel\":false,\"stpSel\":false,\"csvSel\":false,\"igsSel\":false,\"saveName\":\"Scan_1\",\"saveProjectPath\":\"C:/Users/Administrator\",\"keepBackup\":false,\"isUseSnCheck\":false}",
+                "properties_ui": "qrc:/qmls/Sn3DSaveDataPage.qml",
+                "secondLevelId": "secondSaveTrak",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "mesh",
+                "displayName": "网格处理",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "682c2ede-mesh",
+                        "inputSock": "subscribe",
+                        "outputNode": "22a1c1f9-pauseScan",
+                        "outputSock": "publish",
+                        "uuid": "fddc04a-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:/qmls/Sn3DGenerateGridDataTrack.qml",
+                "objID": "682c2ede-mesh",
+                "objName": "mesh",
+                "objPathID": "682c2ede-mesh",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 4963,
+                "posY": 3420,
+                "properties": "{\"encapParamsSelectLevel\":0,\"qualityLevel\":1,\"filterLevel\":4,\"smoothLevel\":1,\"removeSingleValue\":1,\"boundaryOptCheck\":true,\"maxFaceCheck\":true,\"maxFaceNum\":\"20000000\",\"autoFixHoleCheck\":true,\"smallHolePerimeter\":\"10\",\"deleteRealmEditValue\":\"2\",\"encapModelRadio\":0,\"removeThornsCheck\":true,\"markPatchHoleCheck\":false,\"recmandSwitchCheck\":true,\"edgeMeasureCheck\":true,\"holeMeasureCheck\":true,\"thicknessEditTxt\":\"0.4\"}",
+                "properties_ui": "qrc:/qmls/Sn3DGenerateGridDataTrack.qml",
+                "secondLevelId": "secondPackageProcessTrak",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "扫描仪命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "startScan",
+                "displayName": "开始扫描",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "79881ef9-startScan",
+                        "inputSock": "subscribe",
+                        "outputNode": "a4abd425-originalMove",
+                        "outputSock": "publish",
+                        "uuid": "33dfbca6-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "",
+                "objID": "79881ef9-startScan",
+                "objName": "startScan",
+                "objPathID": "79881ef9-startScan",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 4961,
+                "posY": 3322,
+                "properties_ui": "",
+                "secondLevelId": "secondStartScanTrak",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "Scanner Command",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "scanSettings",
+                "displayName": "Scan Setting",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstScanCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "87fa91f0-scanSettings",
+                        "inputSock": "subscribe",
+                        "outputNode": "2da019c2-newProject",
+                        "outputSock": "publish",
+                        "uuid": "de033158-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/scanner_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:/qmls/Sn3DScanSetting.qml",
+                "objID": "87fa91f0-scanSettings",
+                "objName": "scanSettings",
+                "objPathID": "87fa91f0-scanSettings",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5281,
+                "posY": 3214,
+                "properties": "{\"dotDis\":13,\"lightMode\":0,\"scanObject\":0,\"lightness\":2,\"holeCompensation\":\"0\",\"highSpeedSwitch\":false,\"qualitySwitch\":true,\"localViewSwitch\":false,\"lockViewSwitch\":false,\"viewAreaSwitch\":false,\"dotDisTxtEdit\":13,\"scanTypeIndex\":0,\"isUseNovaMarkerSize6\":false,\"isUseNovaMarkerSize12\":true}",
+                "properties_ui": "qrc:/qmls/Sn3DScanSetting.qml",
+                "secondLevelId": "secondScanSettingTrak",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": 60000,
+                "topic": "TrakScansoftRequest",
+                "width": 258
+            },
+            {
+                "cate": "机器人命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "originalMove",
+                "displayName": "原点运动",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstRobotCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "a4abd425-originalMove",
+                        "inputSock": "subscribe",
+                        "outputNode": "87fa91f0-scanSettings",
+                        "outputSock": "publish",
+                        "uuid": "1961469-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/robot_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:/qmls/Sn3DRobotOriginMotion.qml",
+                "objID": "a4abd425-originalMove",
+                "objName": "originalMove",
+                "objPathID": "a4abd425-originalMove",
+                "options": 0,
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5588,
+                "posY": 3214,
+                "properties": "{\"x\":\"860\",\"y\":\"720\",\"z\":\"720\",\"rx\":\"720\",\"ry\":\"720\",\"rz\":\"720\",\"j1\":\"860\",\"j2\":\"720\",\"j3\":\"720\",\"j4\":\"720\",\"j5\":\"720\",\"j6\":\"720\",\"originalPointListVisible\":false,\"originalListRecVisible\":false}",
+                "properties_ui": "qrc:/qmls/Sn3DRobotOriginMotion.qml",
+                "secondLevelId": "secondOriginMove",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "RobotRequest",
+                "width": 258
+            },
+            {
+                "cate": "检测命令",
+                "childLinks": [
+                ],
+                "childNodes": [
+                ],
+                "cmd": "inspect",
+                "displayName": "SHINING3D Inspect",
+                "extraData": "{\n}\n",
+                "firstLevelId": "firstInspectCommand",
+                "height": 40,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": ""
+                    },
+                    {
+                        "name": "",
+                        "type": ""
+                    }
+                ],
+                "link_in_blacklist": "",
+                "links": [
+                    {
+                        "graphName": "EditGraphView",
+                        "inputNode": "ac97ed9c-ShiningInspect",
+                        "inputSock": "subscribe",
+                        "outputNode": "43ba7e84-save",
+                        "outputSock": "publish",
+                        "uuid": "fbb747bb-x"
+                    }
+                ],
+                "nodeIcon": "qrc:images/inspect_icon.png",
+                "nodeType": 0,
+                "node_ui": "qrc:/qmls/ShiningInspect.qml",
+                "objID": "ac97ed9c-ShiningInspect",
+                "objName": "ShiningInspect",
+                "objPathID": "ac97ed9c-ShiningInspect",
+                "options": 0,
+                "outputs": [
+                ],
+                "params": [
+                ],
+                "parentGraph": "EditGraphView",
+                "posX": 5600,
+                "posY": 3418,
+                "properties": "{\"exe\":\"SHINING3D Inspect.exe\",\"templateFilePath\":\"\",\"exportFilePath\":\"\",\"isUseShareMemory\":false,\"isCoverLastReport\":false,\"isSaveCSV\":false,\"isSavePDF\":true,\"isSaveProject\":true,\"openInspectReportCheck\":true}",
+                "properties_ui": "qrc:/qmls/ShiningInspect.qml",
+                "secondLevelId": "secondShiningInspect",
+                "state": 257,
+                "subNodes": [
+                ],
+                "timeout": -1,
+                "topic": "ShiningInspectRequest",
+                "width": 258
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "info": {
+        "version": "2.0.2.0"
+    },
+    "workflowinfo": {
+        "maskParam": {
+            "cameraScale": 1,
+            "editorWindowContentX": 4806,
+            "editorWindowContentY": 3043,
+            "editorWindowInitHeight": 6800,
+            "editorWindowInitWidth": 11530
+        },
+        "project": [
+        ]
+    }
+}

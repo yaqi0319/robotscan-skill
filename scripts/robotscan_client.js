@@ -14,8 +14,6 @@ const action_map = {
   "suspend": "CommModule_Suspend",
   "resume": "CommModule_Resume",
   "open": "CommModule_Open_Template",
-  "scan": "CommModule_Start_Scan",
-  "status": "CommModule_Get_Status"
 };
 
 async function callRobot(action, params = {}) {
@@ -28,7 +26,7 @@ async function callRobot(action, params = {}) {
   };
 
   const message = `msgBegin${JSON.stringify(payload)}msgEnd`;
-  
+
   const result = {
     success: false,
     action: action,
@@ -39,33 +37,25 @@ async function callRobot(action, params = {}) {
 
   return new Promise((resolve) => {
     const client = new net.Socket();
-    client.setTimeout(5000);
+    client.setTimeout(2000); // Only timeout if connection or sending fails
 
     client.connect(TARGET_PORT, TARGET_IP, () => {
-      client.write(message);
-    });
-
-    client.on('data', (data) => {
-      let rawData = data.toString('utf8');
-      const cleanData = rawData.replace("msgBegin", "").replace("msgEnd", "");
-      try {
-        result.response = JSON.parse(cleanData);
-      } catch (e) {
-        result.response = cleanData;
-      }
-      result.success = true;
-      client.destroy();
-    });
-
-    client.on('timeout', () => {
-      result.error = "Timeout: No response from robot";
-      result.success = true; // Still success if we sent it
-      client.destroy();
+      // Send the command and resolve once it's written to the buffer.
+      // Status information is written to log files by RC, not via TCP response.
+      client.write(message, () => {
+        result.success = true;
+        client.destroy();
+      });
     });
 
     client.on('error', (err) => {
       result.error = err.message;
       resolve(result);
+    });
+
+    client.on('timeout', () => {
+      result.error = "Connection/Send Timeout";
+      client.destroy();
     });
 
     client.on('close', () => {
@@ -81,10 +71,10 @@ if (require.main === module) {
   let params = {};
 
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === "--action") action = args[i+1];
+    if (args[i] === "--action") action = args[i + 1];
     if (args[i] === "--params") {
       try {
-        params = JSON.parse(args[i+1]);
+        params = JSON.parse(args[i + 1]);
       } catch (e) {
         process.stdout.write(JSON.stringify({ success: false, error: "Invalid JSON in --params" }));
         process.exit(1);
