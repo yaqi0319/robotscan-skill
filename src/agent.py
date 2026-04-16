@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
+from langgraph.checkpoint.memory import MemorySaver
 from src.tools import get_tools
 
 # Load environment variables from .env if it exists
@@ -34,7 +35,10 @@ def get_agent():
         "Be concise and professional."
     )
 
-    agent = create_react_agent(llm, tools, prompt=system_message)
+    # Add a memory checkpointer to enable multi-turn conversation
+    memory = MemorySaver()
+    
+    agent = create_react_agent(llm, tools, prompt=system_message, checkpointer=memory)
     return agent
 
 if __name__ == "__main__":
