@@ -40,7 +40,7 @@
 
 4. **运行演示**:
    ```bash
-   uv run python src/main.py
+   uv run python -m src.main
    ```
 
 ## 功能特性
