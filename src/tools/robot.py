@@ -52,27 +52,37 @@ def load_scan_template(filename: str):
     """
     Loads a specific scan template (.scanTemplate) into the RC software.
     Args:
-        filename: The name of the template file (e.g., 'plc_1_1.scanTemplate').
+        filename: The name of the template file (e.g., '1_default.scanTemplate').
     """
     config = get_config()
-    template_dir = config.get("scanTemplate", "")
+    template_config = config.get("scanTemplate", "")
     
-    # If the user provides a full path, use it. Otherwise, look in the config directory.
+    # Resolve the physical path and the logical name/path for the TCP command
     if os.path.isabs(filename):
+        # Case 1: AI provided an absolute path directly
         full_path = filename
         name = os.path.basename(filename)
         path = os.path.dirname(filename)
+    elif os.path.isfile(template_config):
+        # Case 2: Config is a full file path (User's current scenario)
+        full_path = template_config
+        name = os.path.basename(template_config)
+        path = os.path.dirname(template_config)
     else:
+        # Case 3: Config is a directory, AI provided a filename
+        path = template_config
         name = filename
-        path = template_dir
         full_path = os.path.join(path, name)
         
     if not os.path.exists(full_path):
-        return f"Error: Template file not found at {full_path}"
+        return f"Error: Template file not found at {full_path}. Please check your config/path.json 'scanTemplate' value."
         
+    # Ensure standard path separators for the hardware
+    path = path.replace("\\", "/")
+    
     res = client.send_command("open", params={"filename": name, "path": path})
     if res["success"]:
-        return f"Successfully sent command to load template: {name}"
+        return f"Successfully sent command to load template: {name} (Path: {path})"
     else:
         return f"Failed to load template: {res['error']}"
 
