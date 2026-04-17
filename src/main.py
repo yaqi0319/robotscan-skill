@@ -13,7 +13,11 @@ async def run_interactive_demo():
     agent = get_agent()
     
     # thread_id is used by MemorySaver to track different conversations
-    config = {"configurable": {"thread_id": "robotscan_demo_thread"}}
+    # recursion_limit increased to 100 to allow for extensive multi-step tasks (e.g., browsing many files)
+    config = {
+        "configurable": {"thread_id": "robotscan_demo_thread"},
+        "recursion_limit": 100
+    }
     
     console.print(Panel.fit(
         "[bold blue]RobotScan Agent[/bold blue] 智能交互演示\n"
@@ -52,7 +56,9 @@ async def run_interactive_demo():
                         
                         if last_msg.tool_calls:
                             for tc in last_msg.tool_calls:
-                                console.print(f"  [cyan]▸ 正在调用工具: [bold]{tc['name']}[/bold][/cyan]")
+                                # Enhanced logging: show tool name and arguments
+                                args_str = str(tc['args'])
+                                console.print(f"  [cyan]▸ 正在调用工具: [bold]{tc['name']}[/bold] 参数: [dim]{args_str}[/dim][/cyan]")
                         
                         # Buffer final AI response (messages without tool calls)
                         elif last_msg.content:
