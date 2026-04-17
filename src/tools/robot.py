@@ -18,7 +18,7 @@ client = RobotScanClient()
 
 @tool
 def get_robot_status():
-    """Reads the latest equipment log from Log_dir to check the current status of the scanning system."""
+    """Reads the latest log from Log_dir to check the current status of the scanning system."""
     config = get_config()
     log_dir = config.get("Log_dir", "")
     

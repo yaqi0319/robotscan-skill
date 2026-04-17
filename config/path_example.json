@@ -1,6 +1,6 @@
 {
     "RobotScan_exe_path": "",
-    "Log_path": "",
+    "Log_dir": "",
     "scanTemplate": "",
     "rsc": "",
     "report": ""
