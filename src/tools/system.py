@@ -52,11 +52,11 @@ def read_project_file(path: str, max_chars: int = 20000):
         with open(target_path, "r", encoding="utf-8", errors="replace") as f:
             content = f.read(max_chars)
             if len(content) >= max_chars:
-                return (f"--- Content of {relative_path} (Truncated at {max_chars} chars) ---\n"
+                return (f"--- Content of {path} (Truncated at {max_chars} chars) ---\n"
                         f"{content}\n"
                         f"--- End (Truncated) ---\n"
                         f"Note: File has internal lines not shown. Specify a start offset if needed.")
-            return f"--- Content of {relative_path} ---\n{content}"
+            return f"--- Content of {path} ---\n{content}"
     except Exception as e:
         return f"Error reading file: {str(e)}"
 
