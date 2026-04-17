@@ -18,12 +18,22 @@ client = RobotScanClient()
 
 @tool
 def get_robot_status():
-    """Reads the latest log from Log_dir to check the current status of the scanning system."""
+    """Reads the latest log from the configured log directory to check the current status of the scanning system."""
     config = get_config()
-    log_dir = config.get("Log_dir", "")
+    # Support both Log_dir and Log_path for compatibility
+    log_path_raw = config.get("Log_dir") or config.get("Log_path", "")
     
-    if not log_dir or not os.path.exists(log_dir):
-        return "Error: Log directory not configured or not found. Cannot determine status."
+    if not log_path_raw:
+        return "Error: Log directory/path not configured in path.json."
+        
+    # Robust path resolution (absolute or relative to ROOT_DIR)
+    if os.path.isabs(log_path_raw):
+        log_dir = log_path_raw
+    else:
+        log_dir = os.path.join(ROOT_DIR, log_path_raw)
+        
+    if not os.path.exists(log_dir):
+        return f"Error: Log location not found at {log_dir}. Please check your config/path.json."
     
     # Identify the target log file
     target_log = None
@@ -32,15 +42,15 @@ def get_robot_status():
         files = [os.path.join(log_dir, f) for f in os.listdir(log_dir)]
         files = [f for f in files if os.path.isfile(f)]
         if not files:
-            return f"Error: No log files found in {log_dir}."
+            return f"Error: No log files found in directory {log_dir}."
         target_log = max(files, key=os.path.getmtime)
     else:
-        # Fallback if Log_dir in config actually points to a file
+        # Fallback if the path in config directly points to a file
         target_log = log_dir
     
     try:
-        # Read the last 10 lines of the identified log
-        with open(target_log, "r", encoding="utf-8") as f:
+        # Read the last 10 lines with robust encoding error handling
+        with open(target_log, "r", encoding="utf-8", errors="replace") as f:
             lines = f.readlines()
             last_lines = lines[-10:]
             return f"Source: {os.path.basename(target_log)}\nLast log entries:\n" + "".join(last_lines)
