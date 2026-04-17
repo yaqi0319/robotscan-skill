@@ -6,46 +6,42 @@ from langchain_core.tools import tool
 ROOT_DIR = Path(__file__).parent.parent.parent.resolve()
 
 @tool
-def list_project_files(relative_path: str = "."):
+def list_project_files(path: str = "."):
     """
-    Lists files and directories within the project workspace.
+    Lists files and directories at the given path.
     Args:
-        relative_path: Path relative to project root (e.g., 'data' or '.').
+        path: Path to list (e.g., '.', 'C:/Logs', or 'data').
     """
     try:
-        target_path = (ROOT_DIR / relative_path).resolve()
-        # Security Check: Ensure the path is inside ROOT_DIR
-        if not str(target_path).startswith(str(ROOT_DIR)):
-            return "Error: Access denied. Path is outside of project root."
+        # Resolve path (supports both relative to project and absolute)
+        target_path = Path(path).resolve() if os.path.isabs(path) else (ROOT_DIR / path).resolve()
         
         if not target_path.exists():
-            return f"Error: Path '{relative_path}' does not exist."
+            return f"Error: Path '{path}' does not exist."
             
         items = []
         for i in target_path.iterdir():
             prefix = "[DIR] " if i.is_dir() else "[FILE]"
             items.append(f"{prefix} {i.name}")
             
-        return f"Contents of {relative_path}:\n" + "\n".join(items)
+        return f"Contents of {path}:\n" + "\n".join(items)
     except Exception as e:
         return f"Error listing directory: {str(e)}"
 
 @tool
-def read_project_file(relative_path: str, max_chars: int = 20000):
+def read_project_file(path: str, max_chars: int = 20000):
     """
-    Reads a file's content from the project workspace with safety limits.
+    Reads a file's content from the given path with safety limits.
     Args:
-        relative_path: Path relative to project root (e.g., 'config/path.json').
+        path: Path to read (e.g., 'config/path.json' or an absolute path like 'C:/Temp/log.txt').
         max_chars: Maximum characters to read to avoid context overflow.
     """
     try:
-        target_path = (ROOT_DIR / relative_path).resolve()
-        # Security Check
-        if not str(target_path).startswith(str(ROOT_DIR)):
-            return "Error: Access denied. Path outside root."
+        # Resolve path (supports both relative to project and absolute)
+        target_path = Path(path).resolve() if os.path.isabs(path) else (ROOT_DIR / path).resolve()
             
         if not target_path.is_file():
-            return f"Error: '{relative_path}' is not a file."
+            return f"Error: '{path}' is not a file."
             
         # Size hint for the agent
         size = target_path.stat().st_size
