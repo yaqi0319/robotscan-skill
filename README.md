@@ -8,15 +8,20 @@
 - **核心框架**: LangGraph (ReAct Agent)
 - **通讯协议**: TCP (msgBegin{JSON}msgEnd)
 
-## 目录结构
-- `src/`: 核心源码
-  - `agent.py`: LangGraph 定义
-  - `tools.py`: Agent 可调用的工具（状态检查、模板加载、扫描控制）
-  - `client.py`: 底层 TCP 通讯客户端
-  - `main.py`: Demo 运行入口
-- `config/`: 配置文件 (`path.json`)
-- `manual/`: 知识库（Ageent 会自动通过查询工具摄入这里的知识）
-- `data/`: 示例项目数据
+## 核心架构 (Conceptual Architecture)
+
+本项目遵循“智能体第一性原理”，将功能划分为以下核心概念：
+
+- **大脑 (Brain - `agent.py`)**: 基于 LangGraph 的推理核心，集成了通信协议知识，负责决策与调度。
+- **感官与工具 (Senses & Tools - `src/tools/`)**: 
+  - **专业技能 (`robot.py`)**: 3D 扫描特有的硬核能力（状态监测、指令控制）。
+  - **基础感知 (`system.py`)**: 对项目环境的观察力（文件浏览、安全读取）。
+- **身体 (Body - `client.py`)**: 底层 TCP 通讯协议的 Python 实现，负责与 RobotScan Control 硬件进行物理信息交换。
+- **记忆 (Memory)**: 具备会话级别的 Checkpointer，确保 Agent 能够理解复杂的连续任务指令。
+- **知识库 (Knowledge - `manual/`)**: 各种 Markdown 格式的技术手册，Agent 会根据需要动态摄入知识。
+- **配置与数据 (Config & Data)**: 
+  - `config/`: 路径与系统配置。
+  - `data/`: 实际的扫描项目与日志数据。
 
 ## 安装与运行
 

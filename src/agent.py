@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import MemorySaver
-from src.tools import get_tools
+from src.tools import get_all_tools
 
 # Load environment variables from .env if it exists
 load_dotenv()
@@ -25,13 +25,23 @@ def get_agent():
         temperature=0
     )
 
-    tools = get_tools()
+    # Combine domain-specific and system-wide tools
+    tools = get_all_tools()
     
+    # Load base knowledge (communication protocol) to inject into system prompt
+    protocol_path = os.path.join(os.path.dirname(__file__), "..", "manual", "robotscan_communication_protocal.md")
+    protocol_content = ""
+    if os.path.exists(protocol_path):
+        with open(protocol_path, "r", encoding="utf-8") as f:
+            protocol_content = f.read()
+
     system_message = (
         "You are the RobotScan Assistant. Your goal is to help users control the 3D scanning equipment.\n"
         "You have tools to check status, load templates, control the scanner, and search the manual.\n"
         "Always check the equipment status before starting a scan.\n"
-        "If you are unsure about a process, search the manual.\n"
+        "If you are unsure about a process, search the manual.\n\n"
+        "### Base Knowledge: Communication Protocol\n"
+        f"{protocol_content}\n\n"
         "Be concise and professional."
     )
 

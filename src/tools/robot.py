@@ -3,12 +3,14 @@ import json
 from langchain_core.tools import tool
 from src.client import RobotScanClient
 
-# Load config
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "config", "path.json")
+# Base path for relative lookups
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "..", "..")
 
+# Load config utility
 def get_config():
-    if os.path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH, "r") as f:
+    config_path = os.path.join(ROOT_DIR, "config", "path.json")
+    if os.path.exists(config_path):
+        with open(config_path, "r") as f:
             return json.load(f)
     return {}
 
@@ -94,11 +96,11 @@ def control_scanner(action: str):
 def search_manual(query: str = None):
     """
     Lists available documentation in the manual or reads a specific file if query matches a filename.
+    Used for scanning technical guides and communication protocols.
     Args:
         query: Optional filename to read (e.g., 'robotscan_communication_protocal.md').
-               If omitted or no match, lists all documents.
     """
-    manual_dir = os.path.join(os.path.dirname(__file__), "..", "manual")
+    manual_dir = os.path.join(ROOT_DIR, "manual")
     if not os.path.exists(manual_dir):
         return "Error: Manual directory not found."
         
@@ -110,5 +112,5 @@ def search_manual(query: str = None):
             
     return "Available manuals:\n- " + "\n- ".join(files) + "\n\nUse this tool with a filename to read its content."
 
-def get_tools():
+def get_robot_tools():
     return [get_robot_status, load_scan_template, control_scanner, search_manual]
