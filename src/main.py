@@ -41,17 +41,26 @@ async def run_interactive_demo():
                     last_msg = chunk["messages"][-1]
                     
                     # Display tool calls
-                    if last_msg.type == "ai" and last_msg.tool_calls:
-                        for tc in last_msg.tool_calls:
-                            console.print(f"  [cyan]▸ 正在调用工具: [bold]{tc['name']}[/bold][/cyan]")
+                    if last_msg.type == "ai":
+                        # If there is content AND tool_calls, this is the "Thought" process
+                        if last_msg.content and last_msg.tool_calls:
+                            console.print(Panel(
+                                Markdown(last_msg.content), 
+                                title="[italic dim]Agent 思考过程[/italic dim]", 
+                                border_style="dim"
+                            ))
+                        
+                        if last_msg.tool_calls:
+                            for tc in last_msg.tool_calls:
+                                console.print(f"  [cyan]▸ 正在调用工具: [bold]{tc['name']}[/bold][/cyan]")
+                        
+                        # Buffer final AI response (messages without tool calls)
+                        elif last_msg.content:
+                            final_ai_msg = last_msg.content
                     
                     # Display tool results
                     elif last_msg.type == "tool":
                         console.print(f"  [dim green]✓ 工具 '{last_msg.name}' 返回结果[/dim green]")
-                    
-                    # Final AI response (buffer it)
-                    elif last_msg.type == "ai" and last_msg.content:
-                        final_ai_msg = last_msg.content
 
         if final_ai_msg:
             console.print(Panel(Markdown(final_ai_msg), title="[bold blue]RobotScan Assistant[/bold blue]", border_style="blue"))
