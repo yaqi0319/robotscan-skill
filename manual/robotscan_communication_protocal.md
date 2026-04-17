@@ -3,7 +3,7 @@
 ## 1. 确定RobotScan Control路径
 - 1. 检查前置路径配置，如果缺失/不正确，先自己想办法拿到，实在没办法再请求用户帮助：
     - **RobotScan_exe_path**：RobotScan Control.exe程序路径
-    - **Log_path**：RobotScan_exe_path同级目录下的'/userlog'文件夹
+    - **Log_dir**：RobotScan_exe_path同级目录下的'/userlog'文件夹
     - scanTemplate：扫描程序路径
     - rsc：RC工程路径
     - report：检测报告存放的路径

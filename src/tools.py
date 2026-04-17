@@ -16,19 +16,32 @@ client = RobotScanClient()
 
 @tool
 def get_robot_status():
-    """Reads the equipment log to check the current status of the scanning system."""
+    """Reads the latest equipment log from Log_dir to check the current status of the scanning system."""
     config = get_config()
-    log_path = config.get("Log_path", "")
+    log_dir = config.get("Log_dir", "")
     
-    if not log_path or not os.path.exists(log_path):
-        return "Error: Log path not configured or not found. Cannot determine status."
+    if not log_dir or not os.path.exists(log_dir):
+        return "Error: Log directory not configured or not found. Cannot determine status."
+    
+    # Identify the target log file
+    target_log = None
+    if os.path.isdir(log_dir):
+        # List all files and find the newest one
+        files = [os.path.join(log_dir, f) for f in os.listdir(log_dir)]
+        files = [f for f in files if os.path.isfile(f)]
+        if not files:
+            return f"Error: No log files found in {log_dir}."
+        target_log = max(files, key=os.path.getmtime)
+    else:
+        # Fallback if Log_dir in config actually points to a file
+        target_log = log_dir
     
     try:
-        # Simple implementation: read the last 10 lines of the log
-        with open(log_path, "r", encoding="utf-8") as f:
+        # Read the last 10 lines of the identified log
+        with open(target_log, "r", encoding="utf-8") as f:
             lines = f.readlines()
             last_lines = lines[-10:]
-            return "Last log entries:\n" + "".join(last_lines)
+            return f"Source: {os.path.basename(target_log)}\nLast log entries:\n" + "".join(last_lines)
     except Exception as e:
         return f"Error reading log: {str(e)}"
 

@@ -1,6 +1,6 @@
 {
     "RobotScan_exe_path": "/Applications/RobotScan/RobotScan Control.exe",
-    "Log_path": "/Users/yaqi/Desktop/robotscan-skill/data/Project_Example/userlog/robot.log",
+    "Log_dir": "/Users/yaqi/Desktop/robotscan-skill/data/Project_Example/userlog",
     "scanTemplate": "/Users/yaqi/Desktop/robotscan-skill/data/Project_Example/programProcedure",
     "rsc": "/Users/yaqi/Desktop/robotscan-skill/data/Project_Example/Project_3.rsc",
     "report": "/Users/yaqi/Desktop/robotscan-skill/data/Project_Example/reports"
