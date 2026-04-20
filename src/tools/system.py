@@ -48,15 +48,27 @@ def read_project_file(path: str, max_chars: int = 20000):
         if size > 1_000_000: # 1MB limit for safety
              return "Error: File too large (>1MB). Please use a dedicated tool or read a slice."
 
-        # Robustness: Read with UTF-8 and fallback replacement for binary/non-utf8 chars
-        with open(target_path, "r", encoding="utf-8", errors="replace") as f:
-            content = f.read(max_chars)
-            if len(content) >= max_chars:
-                return (f"--- Content of {path} (Truncated at {max_chars} chars) ---\n"
-                        f"{content}\n"
-                        f"--- End (Truncated) ---\n"
-                        f"Note: File has internal lines not shown. Specify a start offset if needed.")
-            return f"--- Content of {path} ---\n{content}"
+        # Robustness: Try multiple encodings for Windows compatibility
+        content = ""
+        for enc in ["utf-8", "gbk", "gb18030"]:
+            try:
+                with open(target_path, "r", encoding=enc) as f:
+                    content = f.read(max_chars)
+                    break
+            except (UnicodeDecodeError, UnicodeError):
+                continue
+        
+        if not content:
+            # Final fallback to UTF-8 with replacement for unknown characters
+            with open(target_path, "r", encoding="utf-8", errors="replace") as f:
+                content = f.read(max_chars)
+
+        if len(content) >= max_chars:
+            return (f"--- Content of {path} (Truncated at {max_chars} chars) ---\n"
+                    f"{content}\n"
+                    f"--- End (Truncated) ---\n"
+                    f"Note: File has internal lines not shown. Specify a start offset if needed.")
+        return f"--- Content of {path} ---\n{content}"
     except Exception as e:
         return f"Error reading file: {str(e)}"
 

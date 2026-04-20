@@ -49,11 +49,24 @@ def get_robot_status():
         target_log = log_dir
     
     try:
-        # Read the last 10 lines with robust encoding error handling
-        with open(target_log, "r", encoding="utf-8", errors="replace") as f:
-            lines = f.readlines()
-            last_lines = lines[-10:]
-            return f"Source: {os.path.basename(target_log)}\nLast log entries:\n" + "".join(last_lines)
+        # Try multiple encodings for Windows compatibility (GBK/GB18030)
+        content = ""
+        for enc in ["utf-8", "gbk", "gb18030"]:
+            try:
+                with open(target_log, "r", encoding=enc) as f:
+                    lines = f.readlines()
+                    last_lines = lines[-10:]
+                    content = "".join(last_lines)
+                    break
+            except (UnicodeDecodeError, UnicodeError):
+                continue
+        
+        if not content:
+            # Fallback for completely unknown formats
+            with open(target_log, "r", encoding="utf-8", errors="replace") as f:
+                content = "".join(f.readlines()[-10:])
+
+        return f"Source: {os.path.basename(target_log)}\nLast log entries:\n" + content
     except Exception as e:
         return f"Error reading log: {str(e)}"
 
